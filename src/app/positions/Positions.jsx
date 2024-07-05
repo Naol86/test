@@ -1,7 +1,7 @@
 export default function Positions() {
   return (
     <div>
-      <ul class='bg-white shadow-xl overflow-hidden sm:rounded-md max-w-xl mx-auto mt-16 divide-y-2 '>
+      <ul class=' shadow-xl overflow-hidden sm:rounded-md max-w-xl mx-auto mt-16 divide-y-2 '>
         <li>
           <div class='px-4 py-5 sm:px-6'>
             <div class='flex items-center justify-between'>

@@ -1,8 +1,24 @@
-export default function AddPosition() {
+export default function AddEmployee() {
   return (
     <div>
-      <form class='lg:w-[23rem] md:w-[20rem] sm:w-[26rem] mt-5 mx-auto p-4 border rounded-lg shadow-lg'>
-        <h2 class='text-2xl font-bold mb-6'>Position Form</h2>
+      <form class='lg:w-[23rem] md:w-[20rem] sm:w-[26rem] mt-5 mx-auto p-4  border rounded-lg shadow-lg'>
+        <h2 class='text-2xl font-bold mb-6'>Employee Form</h2>
+        <div class='mb-4'>
+          <label class='block text-gray-700 font-bold mb-2' for='email'>
+            Position:
+          </label>
+
+          <select
+            name='parent'
+            id='parent'
+            className='w-full font-semibold text-lg rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-200 focus:border-transparent'
+          >
+            <option value='ceo'>ceo</option>
+            <option value='ceo'>ceo</option>
+            <option value='ceo'>ceo</option>
+            <option value='ceo'>ceo</option>
+          </select>
+        </div>
         <div class='mb-4'>
           <label class='block text-gray-700 font-bold mb-2' for='email'>
             Parent:
