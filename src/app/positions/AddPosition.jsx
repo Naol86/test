@@ -1,8 +1,29 @@
 export default function AddPosition() {
   return (
     <div>
-      <form class='w-xl mx-auto mt-10 p-6 bg-white border rounded-lg shadow-lg'>
-        <h2 class='text-2xl font-bold mb-6'>Feedback Form</h2>
+      <form class='lg:w-[23rem] md:w-[20rem] sm:w-[26rem] mt-5 mx-auto p-4 bg-white border rounded-lg shadow-lg'>
+        <h2 class='text-2xl font-bold mb-6'>Position Form</h2>
+        <div class='mb-4'>
+          <label class='block text-gray-700 font-bold mb-2' for='email'>
+            Parent:
+          </label>
+          {/* <input
+            class='shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'
+            id='email'
+            type='email'
+            placeholder='Enter your email'
+          /> */}
+          <select
+            name='parent'
+            id='parent'
+            className='w-full font-semibold text-lg rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-200 focus:border-transparent'
+          >
+            <option value='ceo'>ceo</option>
+            <option value='ceo'>ceo</option>
+            <option value='ceo'>ceo</option>
+            <option value='ceo'>ceo</option>
+          </select>
+        </div>
         <div class='mb-4'>
           <label class='block text-gray-700 font-bold mb-2' for='name'>
             Name:
@@ -14,20 +35,10 @@ export default function AddPosition() {
             placeholder='Enter your name'
           />
         </div>
-        <div class='mb-4'>
-          <label class='block text-gray-700 font-bold mb-2' for='email'>
-            Email:
-          </label>
-          <input
-            class='shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'
-            id='email'
-            type='email'
-            placeholder='Enter your email'
-          />
-        </div>
+
         <div class='mb-4'>
           <label class='block text-gray-700 font-bold mb-2' for='feedback'>
-            Feedback:
+            Description:
           </label>
           <textarea
             class='shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'
