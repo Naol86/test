@@ -3,7 +3,7 @@ import Link from 'next/link';
 export default function Hero() {
   return (
     <div className='relative bg-gray-50'>
-      <div className='absolute bottom-0 right-0 overflow-hidden lg:inset-y-0'>
+      {/* <div className='absolute bottom-0 right-0 overflow-hidden lg:inset-y-0'>
         <img
           className='w-auto h-full'
           src='https://d33wubrfki0l68.cloudfront.net/1e0fc04f38f5896d10ff66824a62e466839567f8/699b5/images/hero/3/background-pattern.png'
@@ -82,9 +82,9 @@ export default function Hero() {
             </div>
           </div>
         </div>
-      </header>
+      </header> */}
 
-      <section className='relative py-8 sm:py-12 lg:py-16 lg:pb-36'>
+      <section className='relative py-6 sm:py-10 lg:py-14 lg:pb-36'>
         <div className='px-4 mx-auto max-w-7xl sm:px-6 lg:px-8'>
           <div className='grid max-w-lg grid-cols-1 mx-auto lg:max-w-full lg:items-center lg:grid-cols-2 gap-y-12 lg:gap-x-8'>
             <div>
