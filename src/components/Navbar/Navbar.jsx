@@ -1,5 +1,10 @@
+'use client';
+import { useState } from 'react';
 import Link from 'next/link';
+
 export default function Navbar() {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
     <nav className='relative bg-gray-50'>
       <div className='absolute bottom-0 right-0 overflow-hidden lg:inset-y-0'>
@@ -23,7 +28,10 @@ export default function Navbar() {
               </Link>
             </div>
 
-            <div className='flex lg:hidden'>
+            <div
+              className='flex lg:hidden'
+              onClick={() => setIsOpen((pre) => !pre)}
+            >
               <button type='button' className='text-gray-900'>
                 <svg
                   className='w-7 h-7'
@@ -33,50 +41,52 @@ export default function Navbar() {
                   stroke='currentColor'
                 >
                   <path
-                    stroke-linecap='round'
-                    stroke-linejoin='round'
-                    stroke-width='1.5'
+                    strokeLinecap='round'
+                    strokeLinejoin='round'
+                    strokeWidth='1.5'
                     d='M4 6h16M4 12h16M4 18h16'
                   ></path>
                 </svg>
               </button>
             </div>
 
-            <div className='hidden lg:flex lg:ml-10 xl:ml-16 lg:items-center lg:justify-center lg:space-x-8 xl:space-x-16'>
+            <div
+              className={`${
+                isOpen
+                  ? 'block fixed bg-gray-200 right-14 top-10 w-35 p-2 '
+                  : 'hidden'
+              } lg:flex lg:items-center lg:space-x-8`}
+            >
               <Link
                 href='/positions'
-                title=''
-                className='font-semibold text-lg text-gray-900 transition-all duration-200 rounded focus:outline-none font-pj hover:text-opacity-50 focus:ring-1 focus:ring-gray-900 focus:ring-offset-2'
+                title='Positions'
+                className='block mt-4 lg:mt-0 lg:inline-block font-semibold text-lg text-gray-900 transition-all duration-200 rounded focus:outline-none font-pj hover:text-opacity-50 focus:ring-1 focus:ring-gray-900 focus:ring-offset-2'
               >
-                {' '}
-                Positions{' '}
+                Positions
               </Link>
 
               <Link
                 href='/employees'
-                title=''
-                className='font-semibold text-lg text-gray-900 transition-all duration-200 rounded focus:outline-none font-pj hover:text-opacity-50 focus:ring-1 focus:ring-gray-900 focus:ring-offset-2'
+                title='Employees'
+                className='block mt-4 lg:mt-0 lg:inline-block font-semibold text-lg text-gray-900 transition-all duration-200 rounded focus:outline-none font-pj hover:text-opacity-50 focus:ring-1 focus:ring-gray-900 focus:ring-offset-2'
               >
-                {' '}
-                Employees{' '}
+                Employees
               </Link>
 
               <Link
                 href='/about'
-                title=''
-                className='font-semibold text-lg text-gray-900 transition-all duration-200 rounded focus:outline-none font-pj hover:text-opacity-50 focus:ring-1 focus:ring-gray-900 focus:ring-offset-2'
+                title='About Perago'
+                className='block mt-4 lg:mt-0 lg:inline-block font-semibold text-lg text-gray-900 transition-all duration-200 rounded focus:outline-none font-pj hover:text-opacity-50 focus:ring-1 focus:ring-gray-900 focus:ring-offset-2'
               >
-                {' '}
-                About Perago{' '}
+                About Perago
               </Link>
 
               <Link
                 href='/contact'
-                title=''
-                className='font-semibold text-lg text-gray-900 transition-all duration-200 rounded focus:outline-none font-pj hover:text-opacity-50 focus:ring-1 focus:ring-gray-900 focus:ring-offset-2'
+                title='Contact'
+                className='block mt-4 lg:mt-0 lg:inline-block font-semibold text-lg text-gray-900 transition-all duration-200 rounded focus:outline-none font-pj hover:text-opacity-50 focus:ring-1 focus:ring-gray-900 focus:ring-offset-2'
               >
-                {' '}
-                Contact{' '}
+                Contact
               </Link>
             </div>
           </div>
