@@ -19,7 +19,9 @@ export default function Employee({ data }) {
       </div>
       <div className='lg grid-flow-col flex'>
         <div className='shrink-0 sm:flex sm:flex-col sm:items-end grid-cols-2 mx-1'>
-          <p className='text-sm leading-6 text-gray-900'>{data.position}</p>
+          <p className='text-sm leading-6 text-gray-900'>
+            {data.position_name}
+          </p>
           <p className='mt-1 text-xs leading-5 text-gray-500'>experience</p>
         </div>
         <div className='grid space-y-1 mt-0'>
