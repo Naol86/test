@@ -14,7 +14,7 @@ export default function AddEmployee() {
     const response = await fetch('http://127.0.0.1:8000/api/employees');
     if (!response.ok) console.log('error');
     const data = await response.json();
-    setParent(data);
+    setParent(data.results);
   }
 
   async function fetchPositions() {
@@ -25,14 +25,35 @@ export default function AddEmployee() {
   }
 
   useEffect(() => {
-    fetchParent();
     fetchPositions();
   }, []);
 
-  useEffect(() => {}, []);
+  useEffect(() => {
+    fetchParent();
+  }, [employee.position]);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const response = await fetch('http://127.0.0.1:8000/api/employees/', {
+      // Add a trailing slash here
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(employee),
+    });
+    if (response.ok) {
+      alert('Employee added successfully');
+    } else {
+      alert('Error adding employee');
+    }
+  };
 
   return (
-    <form className='max-w-xl mx-auto mt-20 p-6 bg-white border rounded-lg shadow-lg'>
+    <form
+      className='max-w-xl mx-auto my-10 p-5 bg-white border rounded-lg shadow-lg'
+      onSubmit={handleSubmit}
+    >
       <h2 className='text-2xl font-bold mb-6'>Employee Registration Form</h2>
       <div className='mb-4'>
         <label className='block text-gray-700 font-bold mb-2' for='name'>
@@ -64,7 +85,7 @@ export default function AddEmployee() {
             className='bg-gray-100 border border-1 border-gray-300 text-gray-700 text-md rounded-lg block w-full p-2.5'
             value={employee.position}
             onChange={(e) =>
-              setEmployee({ ...employee, position: e.target.value })
+              setEmployee({ ...employee, position: parseInt(e.target.value) })
             }
           >
             <option value={0}>Choose a Position</option>
@@ -77,21 +98,21 @@ export default function AddEmployee() {
               ))}
           </select>
         </div>
-        <div>
+        <div className='my-3'>
           <label className='block text-gray-700 font-bold mb-2' for='name'>
-            Position:
+            Parent:
           </label>
           <select
             id='countries'
             className='bg-gray-100 border border-1 border-gray-300 text-gray-700 text-md rounded-lg block w-full p-2.5'
-            value={employee.position}
+            value={employee.parent}
             onChange={(e) =>
-              setEmployee({ ...employee, position: e.target.value })
+              setEmployee({ ...employee, parent: parseInt(e.target.value) })
             }
           >
             <option value={0}>Choose a Position</option>
-            {positions &&
-              positions.map((position) => (
+            {parent &&
+              parent.map((position) => (
                 <option key={position.id} value={position.id}>
                   {' '}
                   {position.name}
@@ -99,6 +120,12 @@ export default function AddEmployee() {
               ))}
           </select>
         </div>
+        <button
+          type='submit'
+          class='text-white bg-gray-700 hover:scale-105  font-medium rounded-lg text-md px-3 py-2.5 mt-2 text-center active:bg-gray-800'
+        >
+          submit
+        </button>
       </div>
     </form>
   );

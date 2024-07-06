@@ -1,8 +1,8 @@
 export default function Footer() {
   return (
     <footer className='bottom-0'>
-      <div className='px-4 pt-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8'>
-        <div className='grid gap-10 row-gap-6 mb-8 sm:grid-cols-2 lg:grid-cols-4'>
+      <div className='px-4 pt-16 w-full md:px-24 lg:px-8 bg-gray-50 shadow-md'>
+        <div className='grid gap-10 row-gap-6 sm:grid-cols-2 lg:grid-cols-4'>
           <div className='sm:col-span-2'>
             <a
               href='/'
