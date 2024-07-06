@@ -27,7 +27,7 @@ function NavBar() {
   return (
     <div>
       <nav
-        className={`border-gray-200 dark:bg-gray-50 transition-all duration-1000 ease-in ${
+        className={`border-gray-200 dark:bg-gray-50 transition-all duration-200 ease-in ${
           isFixed ? 'fixed top-0 left-0 w-full shadow-lg z-50' : ''
         }`}
       >

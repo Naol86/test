@@ -2,7 +2,8 @@
 import Link from 'next/link';
 import { useState } from 'react';
 export default function Links() {
-  const [dropCategory, setDropCategory] = useState(false);
+  const [dropRegister, setDropRegister] = useState(false);
+  const [dropList, setDropList] = useState(false);
   return (
     <ul className='flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg md:space-x-5 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 dark:border-gray-700'>
       <li>
@@ -14,23 +15,14 @@ export default function Links() {
           Home
         </Link>
       </li>
-      <li>
-        <Link
-          href='/'
-          className='block py-2 px-3 text-gray-800  hover:scale-105 rounded md:bg-transparent md:p-0 font-semibold text-lg transition-all duration-300'
-          aria-current='page'
-        >
-          Home
-        </Link>
-      </li>
-      <li onMouseLeave={() => setDropCategory(false)}>
+      <li onMouseLeave={() => setDropList(false)}>
         <button
           id='dropdownNavbarLink'
           data-dropdown-toggle='dropdownNavbar'
           className='flex font-semibold items-center justify-between w-full py-2 px-3 text-gray-800 rounded  md:p-0 md:w-auto text-lg hover:scale-105  transition-all duration-300'
-          onClick={() => setDropCategory((pre) => !pre)}
+          onClick={() => setDropList((pre) => !pre)}
         >
-          Category{' '}
+          List{' '}
           <svg
             className='w-2.5 h-2.5 ms-2.5'
             aria-hidden='true'
@@ -50,24 +42,67 @@ export default function Links() {
         <div
           id='dropdownNavbar'
           className={`z-20 ${
-            dropCategory ? '' : 'hidden'
-          } absolute  font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600`}
+            dropList ? '' : 'hidden'
+          } absolute  font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44`}
         >
-          <ul className='py-2 px-2 text-lg font-medium min-w-52 text-gray-700 z-50 rounded-md bg-gray-100 shadow-lg'>
-            <li>something</li>
-            <li>something</li>
-            <li>something</li>
-          </ul>
+          <div className='divide-y-2 w-full bg-gray-100 text-lg text-gray-800 font-medium'>
+            <div className='p-2 hover:scale-105 transition-all duration-300'>
+              <Link href='/employees'>Employees</Link>
+            </div>
+            <div className='p-2 hover:scale-105 transition-all duration-300'>
+              <Link href='/positions'>Position</Link>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li onMouseLeave={() => setDropRegister(false)}>
+        <button
+          id='dropdownNavbarLink'
+          data-dropdown-toggle='dropdownNavbar'
+          className='flex font-semibold items-center justify-between w-full py-2 px-3 text-gray-800 rounded  md:p-0 md:w-auto text-lg hover:scale-105  transition-all duration-300'
+          onClick={() => setDropRegister((pre) => !pre)}
+        >
+          Register{' '}
+          <svg
+            className='w-2.5 h-2.5 ms-2.5'
+            aria-hidden='true'
+            xmlns='http://www.w3.org/2000/svg'
+            fill='none'
+            viewBox='0 0 10 6'
+          >
+            <path
+              stroke='currentColor'
+              strokeLinecap='round'
+              strokeLinejoin='round'
+              strokeWidth='2'
+              d='m1 1 4 4 4-4'
+            />
+          </svg>
+        </button>
+        <div
+          id='dropdownNavbar'
+          className={`z-20 ${
+            dropRegister ? '' : 'hidden'
+          } absolute  font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44`}
+        >
+          <div className='divide-y-2 w-full bg-gray-100 text-lg text-gray-800 font-medium'>
+            <div className='p-2 hover:scale-105 transition-all duration-300'>
+              <Link href='/employees/add'>Add Employees</Link>
+            </div>
+            <div className='p-2 hover:scale-105 transition-all duration-300'>
+              <Link href='/position/add'>Add Position</Link>
+            </div>
+          </div>
         </div>
       </li>
 
       <li>
         <Link
-          href='/'
+          href='/about'
           className='block py-2 px-3 text-gray-800  hover:scale-105 rounded md:bg-transparent md:p-0 font-semibold text-lg transition-all duration-300'
           aria-current='page'
         >
-          Home
+          About
         </Link>
       </li>
     </ul>
