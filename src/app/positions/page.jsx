@@ -1,5 +1,5 @@
 import Positions from './Positions';
-import AddPosition from './AddPosition';
+import AddPosition from '@/components/Positions/AddPosition';
 
 export default function PositionsPage() {
   return (

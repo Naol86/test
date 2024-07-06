@@ -1,42 +1,52 @@
-export default function AddEmployee() {
+'use client';
+import { useEffect, useState } from 'react';
+
+import getPositions from '@/api/getPositions';
+
+export default function AddPosition() {
+  const [positions, setPositions] = useState([]);
+
+  const getData = async () => {
+    try {
+      const data = await getPositions();
+      console.log(data, 'data');
+      setPositions(data.results);
+    } catch (error) {
+      console.log(error, 'err');
+    }
+  };
+
+  useEffect(() => {
+    getData();
+  }, []);
+
+  // const positions = await getData();
+  console.log(positions, 'pos');
   return (
     <div>
-      <form className='lg:w-[23rem] md:w-[20rem] sm:w-[26rem] mt-5 mx-auto p-4  border rounded-lg shadow-lg'>
-        <h2 className='text-2xl font-bold mb-6'>Employee Form</h2>
+      <form className='lg:w-[23rem] md:w-[20rem] sm:w-[26rem] mt-5 mx-auto p-4 border rounded-lg shadow-lg'>
+        <h2 className='text-2xl font-bold mb-6'>Position Form</h2>
         <div className='mb-4'>
-          <label className='block text-gray-700 font-bold mb-2' for='email'>
-            Position:
-          </label>
-
-          <select
-            name='parent'
-            id='parent'
-            className='w-full font-semibold text-lg rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-200 focus:border-transparent'
+          <label
+            className='block text-gray-700 font-bold mb-2'
+            htmlFor='parent'
           >
-            <option value='ceo'>ceo</option>
-            <option value='ceo'>ceo</option>
-            <option value='ceo'>ceo</option>
-            <option value='ceo'>ceo</option>
-          </select>
-        </div>
-        <div className='mb-4'>
-          <label className='block text-gray-700 font-bold mb-2' for='email'>
             Parent:
           </label>
-
           <select
             name='parent'
             id='parent'
             className='w-full font-semibold text-lg rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-200 focus:border-transparent'
           >
-            <option value='ceo'>ceo</option>
-            <option value='ceo'>ceo</option>
-            <option value='ceo'>ceo</option>
-            <option value='ceo'>ceo</option>
+            {positions.map((position) => (
+              <option key={position.id} value={position.name}>
+                {position.name}
+              </option>
+            ))}
           </select>
         </div>
         <div className='mb-4'>
-          <label className='block text-gray-700 font-bold mb-2' for='name'>
+          <label className='block text-gray-700 font-bold mb-2' htmlFor='name'>
             Name:
           </label>
           <input
@@ -46,16 +56,18 @@ export default function AddEmployee() {
             placeholder='Enter your name'
           />
         </div>
-
         <div className='mb-4'>
-          <label className='block text-gray-700 font-bold mb-2' for='feedback'>
+          <label
+            className='block text-gray-700 font-bold mb-2'
+            htmlFor='feedback'
+          >
             Description:
           </label>
           <textarea
             className='shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'
             id='feedback'
             rows='5'
-            placeholder='Enter Description'
+            placeholder='Enter description'
           ></textarea>
         </div>
         <button
@@ -68,3 +80,4 @@ export default function AddEmployee() {
     </div>
   );
 }
+
