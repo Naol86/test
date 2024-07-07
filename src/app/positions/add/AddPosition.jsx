@@ -42,7 +42,7 @@ export default function AddPosition() {
       className='max-w-xl mx-auto my-10 p-5 bg-white border rounded-lg shadow-lg'
       onSubmit={handleSubmit}
     >
-      <h2 className='text-2xl font-bold mb-6'>Employee Registration Form</h2>
+      <h2 className='text-2xl font-bold mb-6'>Position Registration Form</h2>
       <div className='mb-4'>
         <label className='block text-gray-700 font-bold mb-2' for='name'>
           Name:
