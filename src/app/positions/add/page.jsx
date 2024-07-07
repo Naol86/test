@@ -1,3 +1,9 @@
+import AddPosition from './AddPosition';
+
 export default function Page() {
-  return <div>add position</div>;
+  return (
+    <div>
+      <AddPosition />
+    </div>
+  );
 }
