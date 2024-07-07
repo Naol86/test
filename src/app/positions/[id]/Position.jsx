@@ -1,4 +1,5 @@
 'use client';
+import Link from 'next/link';
 import { useEffect, useState } from 'react';
 
 export default function Position({ id }) {
@@ -29,10 +30,10 @@ export default function Position({ id }) {
           <h5 className='mb-2 text-2xl font-bold tracking-tight text-gray-900'>
             {position && position.name}
           </h5>
-          <p className='mb-3 text-gray-700 dark:text-gray-400'>
+          <p className='mb-3 text-gray-500'>
             Parent: {position && position.parent_name}
           </p>
-          <p className='mb-3 font-normal text-gray-700 dark:text-gray-400'>
+          <p className='mb-3 font-normal text-gray-600'>
             Here are the biggest enterprise technology acquisitions of 2021 so
             far, in reverse chronological order.
           </p>

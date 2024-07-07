@@ -21,10 +21,10 @@ export default function Position({ data }) {
                   technologies.
                 </p>
                 <div>
-                  <button className='rounded-lg bg-gray-200 p-2 px-5 mx-2 text-gray-700 font-semibold'>
+                  <button className='rounded-lg bg-gray-200 p-2 px-5 mx-2 text-gray-700 font-semibold hover:scale-105 transition-all duration-200'>
                     Edit
                   </button>
-                  <button className='rounded-lg bg-red-600 p-2 px-5 mx-2 text-gray-50 font-semibold'>
+                  <button className='rounded-lg bg-red-600 p-2 px-5 mx-2 text-gray-50 font-semibold hover:scale-105 transition-all duration-200'>
                     Delete
                   </button>
                 </div>

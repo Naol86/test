@@ -22,7 +22,7 @@ export default function Employees() {
   return (
     <ul
       role='list'
-      className='shadow-lg py-5 rounded-md bg-gray-100 space-y-2 flex flex-wrap space-x-3 items-center justify-center'
+      className='shadow-lg py-5 rounded-md bg-gray-100 space-y-2 flex flex-wrap space-x-4 items-center justify-center'
     >
       {employees &&
         employees.map((employee) => (

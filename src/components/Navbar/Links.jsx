@@ -90,7 +90,7 @@ export default function Links() {
               <Link href='/employees/add'>Add Employees</Link>
             </div>
             <div className='p-2 hover:scale-105 transition-all duration-300'>
-              <Link href='/position/add'>Add Position</Link>
+              <Link href='/positions/add'>Add Position</Link>
             </div>
           </div>
         </div>
