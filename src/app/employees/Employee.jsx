@@ -24,24 +24,26 @@ export default function Employee({ data }) {
   return (
     <li>
       <div className='max-w-xl mx-4 sm:max-w-sm md:max-w-sm lg:max-w-sm xl:max-w-sm sm:mx-auto md:mx-auto lg:mx-auto xl:mx-auto mt-16 bg-white shadow-xl rounded-lg text-gray-900'>
-        <div className='rounded-t-lg h-32 overflow-hidden'>
-          <img
-            className='object-cover object-top w-full'
-            src='https://images.unsplash.com/photo-1549880338-65ddcdfd017b?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjE0NTg5fQ'
-            alt='Mountain'
-          />
-        </div>
-        <div className='mx-auto w-32 h-32 relative -mt-16 border-4 border-white rounded-full overflow-hidden'>
-          <img
-            className='object-cover object-center h-32'
-            src='https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80'
-            alt='Woman looking front'
-          />
-        </div>
-        <div className='text-center mt-2'>
-          <h2 className='font-semibold text-lg'>{data.name}</h2>
-          <p className='text-gray-500'>{data.position_name}</p>
-        </div>
+        <Link href={`/employees/${data.id}`}>
+          <div className='rounded-t-lg h-32 overflow-hidden'>
+            <img
+              className='object-cover object-top w-full'
+              src='https://images.unsplash.com/photo-1549880338-65ddcdfd017b?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjE0NTg5fQ'
+              alt='Mountain'
+            />
+          </div>
+          <div className='mx-auto w-32 h-32 relative -mt-16 border-4 border-white rounded-full overflow-hidden'>
+            <img
+              className='object-cover object-center h-32'
+              src='https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80'
+              alt='Woman looking front'
+            />
+          </div>
+          <div className='text-center mt-2'>
+            <h2 className='font-semibold text-lg'>{data.name}</h2>
+            <p className='text-gray-500'>{data.position_name}</p>
+          </div>
+        </Link>
         <div className='p-4 border-t mx-8 mt-2 flex'>
           <button className='block w-1/3 mx-auto rounded-lg bg-gray-700 hover:shadow-lg font-semibold text-white px-6 py-2 hover:bg-gray-800 hover:scale-105 transition-all duration-300'>
             <Link href={`/employees/edit/${data.id}`}>Edit</Link>
@@ -94,13 +96,13 @@ export default function Employee({ data }) {
                 </div>
                 <div className='flex my-2'>
                   <p
-                    className='inline-flex items-center px-4 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 hover:scale-105'
+                    className='inline-flex items-center px-4 py-2 text-md font-semibold text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 hover:scale-105'
                     onClick={() => setWarning(false)}
                   >
                     No
                   </p>
                   <p
-                    className='py-2 px-4 ms-2 text-sm font-medium text-gray-50 rounded-lg hover:scale-105 bg-red-600 hover:bg-red-700'
+                    className='py-2 px-4 ms-2 text-md font-semibold text-gray-50 rounded-lg hover:scale-105 bg-red-600 hover:bg-red-700'
                     onClick={() => handleDelete(data.id)}
                   >
                     Yes
