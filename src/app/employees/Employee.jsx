@@ -44,7 +44,7 @@ export default function Employee({ data }) {
         </div>
         <div className='p-4 border-t mx-8 mt-2 flex'>
           <button className='block w-1/3 mx-auto rounded-lg bg-gray-700 hover:shadow-lg font-semibold text-white px-6 py-2 hover:bg-gray-800 hover:scale-105 transition-all duration-300'>
-            <Link href={`/employees/add/${data.id}`}>Edit</Link>
+            <Link href={`/employees/edit/${data.id}`}>Edit</Link>
           </button>
           <button
             className='w-1/3 block mx-auto rounded-lg bg-red-600 hover:shadow-lg font-semibold text-gray-50 px-6 py-2 hover:scale-105 hover:bg-red-700 transition-all duration-300'

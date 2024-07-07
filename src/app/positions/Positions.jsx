@@ -20,7 +20,7 @@ export default function Positions() {
   }, []);
 
   return (
-    <div className='my-3 mx-3 flex flex-wrap justify-around'>
+    <div className='my-3 mx-3 flex flex-wrap justify-center space-x-4'>
       {positions.map((position) => (
         <Position key={position.id} data={position} />
       ))}
